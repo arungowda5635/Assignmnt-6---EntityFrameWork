@@ -12,7 +12,7 @@ namespace EntityFrameWork.App_Code
 
         //global declaration of the variable 
         SqlConnection connection;
-        String connection_String = "Data Source=DESKTOP-HKD1BEO;Initial Catalog=dbWeb;Integrated Security=True";
+        String connection_String = "Data Source=DHILLON\\SQLEXPRESS;Initial Catalog=dbWeb;Integrated Security=True";
         SqlCommand command;
         SqlDataReader Datareader;
 
