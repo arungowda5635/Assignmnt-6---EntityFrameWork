@@ -83,7 +83,9 @@
     <Content Include="UpdateStudent.aspx" />
     <Content Include="ViewFee.aspx" />
     <Content Include="ViewStudent.aspx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="dbClass.cs" />
@@ -122,7 +124,6 @@
     <Compile Include="ViewStudent.aspx.designer.cs">
       <DependentUpon>ViewStudent.aspx</DependentUpon>
     </Compile>
-    <Content Include="App_Code\dbClass.cs" />
     <Compile Include="AdminZone.aspx.cs">
       <DependentUpon>AdminZone.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -130,7 +131,6 @@
     <Compile Include="AdminZone.aspx.designer.cs">
       <DependentUpon>AdminZone.aspx</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseModel.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -154,6 +154,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="App_Code\" />
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>

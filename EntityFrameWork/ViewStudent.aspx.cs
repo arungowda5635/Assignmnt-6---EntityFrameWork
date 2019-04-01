@@ -12,37 +12,44 @@ namespace EntityFrameWork
         dbClass obj = new dbClass();
         protected void Page_Load(object sender, EventArgs e)
         {
-            String recrd = "<table><tr><td>Name</td><td>Father Name</td><td>Class</td><td>Address</td><td>Mobile No</td><td>Dob</td><td>delete</td><td>Update</td></tr>";
-            DataTable tbl = new DataTable();
-            String qry = "select * from tbStudent";
-            tbl = obj.Srch(qry);
-            if (tbl.Rows.Count > 0)
+            try
             {
-                for (int x = 0; x < tbl.Rows.Count; x++)
+                String recrd = "<table><tr><td>Unique ID</td><td>Name</td><td>Father Name</td><td>Class</td><td>Address</td><td>Mobile No</td><td>Dob</td><td>delete</td><td>Update</td></tr>";
+                DataTable tbl = new DataTable();
+                String qry = "select * from tbStudent";
+                tbl = obj.Srch(qry);
+                if (tbl.Rows.Count > 0)
                 {
-                    recrd = recrd+ "<tr><td>" + tbl.Rows[x]["Name"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["FatherName"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["class"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["Address"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["Mobile"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["Dob"] + "</td>";
-                    recrd = recrd + "<td><a href='ViewStudent.aspx?id=" + tbl.Rows[x]["id"] + "' class='btn-primary' style='border:5px ridge green;height:90px;padding:50px;'>Delete</td>";
-                    recrd = recrd + "<td><a href='UpdateStudent.aspx?id=" + tbl.Rows[x]["id"] + "' class='btn-primary' style='border:5px ridge green;height:90px;padding:50px;'>Update</td></tr>";
+                    for (int x = 0; x < tbl.Rows.Count; x++)
+                    {
+                        recrd = recrd + "<tr><td>"+tbl.Rows[x]["id"]+"</td><td>" + tbl.Rows[x]["SName"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["SFatherName"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["Sclass"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["SAddress"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["SMobile"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["SDob"] + "</td>";
+                        recrd = recrd + "<td><a href='ViewStudent.aspx?id=" + tbl.Rows[x]["id"] + "' class='btn-primary' style='border:5px ridge green;height:10px;padding:10px;'>Delete</td>";
+                        recrd = recrd + "<td><a href='UpdateStudent.aspx?id=" + tbl.Rows[x]["id"] + "#Record' class='btn-primary' style='border:5px ridge green;height:10px;padding:10px;'>Update</td></tr>";
+                    }
+                    rslt.InnerHtml = recrd + "</table>";
                 }
-                rslt.InnerHtml = recrd + "</table>";
-            }
-            else {
-                rslt.InnerHtml = "record is empty";
-            }
+                else
+                {
+                    rslt.InnerHtml = "record is empty";
+                }
 
-            if (Request.QueryString["id"]!=null) {
-                qry = "";
-                qry = "delete from tbStudent where id=" + Convert.ToInt32(Request.QueryString["id"].ToString()) + "";
-                obj.InsDelUpdt(qry);
-                Response.Redirect("ViewStudent.aspx");
+                if (Request.QueryString["id"] != null)
+                {
+                    qry = "";
+                    qry = "delete from tbStudent where id=" + Convert.ToInt32(Request.QueryString["id"].ToString()) + "";
+                    obj.InsDelUpdt(qry);
+                    Response.Redirect("ViewStudent.aspx?#Record");
+                }
+
             }
-
-
+            catch (Exception es) {
+                rslt.InnerHtml = "error in the code";
+            }
         }
     }
 }

@@ -104,16 +104,16 @@
                 </li>
                   </li>
                 <li class="nav-item">
-                  <a href="RegisterStudent.aspx" class="nav-link scroll" >Register</a>
+                  <a href="RegisterStudent.aspx?#Record" class="nav-link scroll" >Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewStudent.aspx" class="nav-link scroll">View student</a>
+                  <a href="ViewStudent.aspx?#Record" class="nav-link scroll">View student</a>
                 </li>
                 <li class="nav-item">
-                  <a href="PayFee.aspx" class="nav-link scroll">Fee</a>
+                  <a href="PayFee.aspx?#record" class="nav-link scroll">Fee</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewFee.aspx" class="nav-link scroll">View Fee</a>
+                  <a href="ViewFee.aspx?#Record" class="nav-link scroll">View Fee</a>
                 </li>
               </ul>
             </div>

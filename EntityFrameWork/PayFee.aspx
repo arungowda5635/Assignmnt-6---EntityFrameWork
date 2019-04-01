@@ -49,7 +49,7 @@
 
     </style>
 </head>
-<body style="background-color:brown;">
+<body style="background-color:brown;color:white;">
     
     <div class="blast-box">
       <div class="blast-icon"><span class="fas fa-tint"></span></div>
@@ -108,16 +108,16 @@
                 </li>
                   </li>
                 <li class="nav-item">
-                  <a href="RegisterStudent.aspx" class="nav-link scroll" >Register</a>
+                  <a href="RegisterStudent.aspx?Record" class="nav-link scroll" >Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewStudent.aspx" class="nav-link scroll">View student</a>
+                  <a href="ViewStudent.aspx?Record" class="nav-link scroll">View student</a>
                 </li>
                 <li class="nav-item">
-                  <a href="PayFee.aspx" class="nav-link scroll">Fee</a>
+                  <a href="PayFee.aspx?Record" class="nav-link scroll">Fee</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewFee.aspx" class="nav-link scroll">View Fee</a>
+                  <a href="ViewFee.aspx?Record" class="nav-link scroll">View Fee</a>
                 </li>
               </ul>
             </div>
@@ -128,7 +128,7 @@
       </div>
       <!--banner -->
       <!-- Slideshow 4 -->
-      <div class="slider">
+      <div class="slider"> 
         <div class="callbacks_container">
           <ul class="rslides" id="slider4">
             <li>
@@ -136,11 +136,11 @@
                 <div class="container">
                   <div class="slider-info text-left">
                     <h4 >Welcome </h4>
-                    <h5>College Admision System</h5>
-                    <p>You can  Add  View Student 
+                    <h5>College Admission System</h5>
+                    <p>Welcome to Fee Payment Protal
                     </p>
                     <div class="outs_more-buttn" >
-                      <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                      <a href="#Record" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Click here to Scroll Down</a>
                     </div>
                   </div>
                 </div>
@@ -161,20 +161,21 @@
     <h1 style="color:white;text-align:center;font-size:50px;">Fee Pay</h1>
     <center>
     <form id="form1" runat="server">
-        <div>
+        <div id="Record">
             <table>
                 <tr>
                     <td>Enter Unique ID</td>
                     <td>
-                        <asp:TextBox ID="txtId" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="txtId"  style="color:black;" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Enter Amount </td>
                     <td>
-                        <asp:TextBox ID="txtFee" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="txtFee" style="color:black;" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
-                    <td> <asp:Button ID="btnFee" class="btn" runat="server" Text="Pay" OnClick="btnFee_Click" /></td>
+                    <td> <asp:Button ID="btnFee" class="btn  btn-primary" runat="server" Text="Pay" OnClick="btnFee_Click" /></td>
+                    <td></td>
                 </tr>
             </table>
 

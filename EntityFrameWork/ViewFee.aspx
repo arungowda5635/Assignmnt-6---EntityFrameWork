@@ -47,7 +47,7 @@
 
     </style>
 </head>
-<body style="background-color:brown;">
+<body style="background-color:brown;color:white;">
 
     
     <div class="blast-box">
@@ -107,16 +107,16 @@
                 </li>
                   </li>
                 <li class="nav-item">
-                  <a href="RegisterStudent.aspx" class="nav-link scroll" >Register</a>
+                  <a href="RegisterStudent.aspx?#Record" class="nav-link scroll" >Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewStudent.aspx" class="nav-link scroll">View student</a>
+                  <a href="ViewStudent.aspx#Record" class="nav-link scroll">View student</a>
                 </li>
                 <li class="nav-item">
-                  <a href="PayFee.aspx" class="nav-link scroll">Fee</a>
+                  <a href="PayFee.aspx#Record" class="nav-link scroll">Fee</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewFee.aspx" class="nav-link scroll">View Fee</a>
+                  <a href="ViewFee.aspx#Record" class="nav-link scroll">View Fee</a>
                 </li>
               </ul>
             </div>
@@ -136,10 +136,10 @@
                   <div class="slider-info text-left">
                     <h4 >Welcome </h4>
                     <h5>College Admision System</h5>
-                    <p>You can  Add  View Student 
+                    <p>Welcome to Fee Payment Details Portal
                     </p>
                     <div class="outs_more-buttn" >
-                      <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                      <a href="#Record" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Click Here to Scroll Down</a>
                     </div>
                   </div>
                 </div>
@@ -157,7 +157,7 @@
     </div>
     <!-- //banner -->
 
-    
+    <div id="Record">
 <h1 style="color:white;text-align:center;font-size:50px;">View Fee </h1>    
     
     <form id="form1" runat="server">
@@ -170,5 +170,6 @@
             </center>
 
     </form>
+        </div>
 </body>
 </html>

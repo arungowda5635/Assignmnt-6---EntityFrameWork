@@ -14,43 +14,78 @@ namespace EntityFrameWork
 
         protected void BtnUpdate_Click(object sender, EventArgs e)
         {
-            String qry = "update tbStudent set Name='"+txtName.Text.ToString()+"',FatherName='"+TxtFatherName.Text.ToString()+"',Address='"+txtAddress.Text.ToString()+"',Mobile='"+TxtmobileNo.Text.ToString()+"',Class='"+TxtClass.Text.ToString()+"',Dob='"+TxtDob.Text.ToString()+"' where id="+TxtId.Text.ToString()+"";
+           
+         try
+             {
+                    
+         
+            //rslt.InnerHtml = txtAddress.Text + "--" + TxtClass.Text + "--" + TxtDob.Text + "--" + TxtFatherName.Text + "--" + TxtId.Text + "--" + TxtmobileNo.Text + "--" + txtName.Text;
+            String qry = "Update tbStudent set SName='"+ txtName1.Text+ "',SFatherName='" + TxtFatherName1.Text + "',SAddress='" + txtAddress1.Text + "',SMobile='" + TxtmobileNo1.Text + "',Sclass='" + TxtClass1.Text + "',SDob='" + TxtDob1.Text + "' where ID='" + Convert.ToInt32(TxtId1.Text)+"'";
+           
             obj.InsDelUpdt(qry);
-            Response.Redirect("ViewStudent.aspx");
+
+            txtName1.Text = "";
+            txtAddress1.Text = "";
+            
+            TxtDob1.Text = "";
+            TxtFatherName1.Text = "";
+            TxtId1.Text = "";
+           TxtmobileNo1.Text = "";
+            id = "";
+
+            Response.Redirect("ViewStudent.aspx?#Record");
+            }
+            catch (Exception rs) {
+                rslt.InnerHtml = "Error ";
+            }
+
         }
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            DataTable tbl = new DataTable();
-             String qry = "select * from tbClass";
-            tbl = obj.Srch(qry);
-            for (int y=0;y<tbl.Rows.Count;y++) {
-                TxtClass.Items.Add(tbl.Rows[y]["Sclass"].ToString());
-            }
+            if (!Page.IsPostBack)
+            {
+                try
+                {
+                    DataTable tbl = new DataTable();
+                    String qry = "select * from tbClass";
+                    tbl = obj.Srch(qry);
+                    for (int y = 0; y < tbl.Rows.Count; y++)
+                    {
+                        TxtClass1.Items.Add(tbl.Rows[y]["Sclass"].ToString());
+                    }
 
-            qry = "";
-            tbl = new DataTable();
+                    qry = "";
+                    tbl = new DataTable();
 
-            if (Request.QueryString["id"]!=null) {
-                 qry = "select * from tbStudent where id="+Convert.ToInt32(Request.QueryString["id"].ToString()) +"";
-                tbl = obj.Srch(qry);
-                if (tbl.Rows.Count>0) {
-                    name = tbl.Rows[0]["Name"].ToString();
-                    address= tbl.Rows[0]["Address"].ToString();
-                    sfather= tbl.Rows[0]["FatherName"].ToString();
-                    sdob= tbl.Rows[0]["Dob"].ToString();
-                    mob=tbl.Rows[0]["Mobile"].ToString();
-                    sclass= tbl.Rows[0]["class"].ToString();
-                    id= tbl.Rows[0]["id"].ToString();
+                    if (Request.QueryString["ID"] != null)
+                    {
+                        qry = "select * from tbStudent where ID=" + Convert.ToInt32(Request.QueryString["ID"].ToString()) + "";
+                        tbl = obj.Srch(qry);
+                        if (tbl.Rows.Count > 0)
+                        {
+                            name = tbl.Rows[0]["SName"].ToString();
+                            address = tbl.Rows[0]["SAddress"].ToString();
+                            sfather = tbl.Rows[0]["SFatherName"].ToString();
+                            sdob = tbl.Rows[0]["SDob"].ToString();
+                            mob = tbl.Rows[0]["SMobile"].ToString();
+                            sclass = tbl.Rows[0]["Sclass"].ToString();
+                            id = tbl.Rows[0]["id"].ToString();
 
-                    TxtId.Text = id;
-                    txtName.Text = name;
-                    txtAddress.Text = address;
-                    TxtClass.Text = sclass;
-                    TxtDob.Text =sdob;
-                    TxtFatherName.Text = sfather;
-                    TxtmobileNo.Text = mob;
+                            TxtId1.Text = id;
+                            txtName1.Text = name;
+                            txtAddress1.Text = address;
+                            TxtClass1.Text = sclass;
+                            TxtDob1.Text = sdob;
+                            TxtFatherName1.Text = sfather;
+                            TxtmobileNo1.Text = mob;
 
+                        }
+                    }
+                }
+                catch (Exception rs)
+                {
+                    rslt.InnerHtml = "Here  is Some error in the Code";
                 }
             }
         }

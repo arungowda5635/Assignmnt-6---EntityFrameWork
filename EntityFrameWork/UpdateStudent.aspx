@@ -50,7 +50,7 @@
     </style>
 
 </head>
-<body style="background-color:brown;">
+<body style="background-color:brown;color:white;">
 
 
 
@@ -111,16 +111,16 @@
                 </li>
                   </li>
                 <li class="nav-item">
-                  <a href="RegisterStudent.aspx" class="nav-link scroll" >Register</a>
+                  <a href="RegisterStudent.aspx?#Record" class="nav-link scroll" >Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewStudent.aspx" class="nav-link scroll">View student</a>
+                  <a href="ViewStudent.aspx?#Record" class="nav-link scroll">View student</a>
                 </li>
                 <li class="nav-item">
-                  <a href="PayFee.aspx" class="nav-link scroll">Fee</a>
+                  <a href="PayFee.aspx?#Record" class="nav-link scroll">Fee</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewFee.aspx" class="nav-link scroll">View Fee</a>
+                  <a href="ViewFee.aspx?#Record" class="nav-link scroll">View Fee</a>
                 </li>
               </ul>
             </div>
@@ -140,10 +140,10 @@
                   <div class="slider-info text-left">
                     <h4 >Welcome </h4>
                     <h5>College Admision System</h5>
-                    <p>You can  Add  View Student 
+                    <p>Welcome to Update Student Details Portal
                     </p>
                     <div class="outs_more-buttn" >
-                      <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
+                      <a href="#Record" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">Click here to Scroll Down</a>
                     </div>
                   </div>
                 </div>
@@ -160,6 +160,7 @@
       </div>
     </div>
     <!-- //banner -->
+    <div id="Record">
     <h1 style="color:white;text-align:center;font-size:50px;">Update Student </h1>
     
 
@@ -170,44 +171,45 @@
                 <tr>
                     <td>ID </td>
                     <td>
-                        <asp:TextBox ID="TxtId"   class="form-control" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtId1" class="form-control" runat="server"></asp:TextBox>
+                    </td>
                 </tr>
         
 
                 <tr>
                     <td>Name </td>
                     <td>
-                        <asp:TextBox ID="txtName"  class="form-control" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="txtName1"  class="form-control" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Father Name</td>
                     <td>
-                        <asp:TextBox ID="TxtFatherName"  class="form-control" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtFatherName1"  class="form-control" runat="server"></asp:TextBox></td>
                 </tr>
 
                 <tr>
                     <td>Address</td>
-                    <td> <asp:TextBox ID="txtAddress"  class="form-control" runat="server"></asp:TextBox></td>
+                    <td> <asp:TextBox ID="txtAddress1"  class="form-control" runat="server"></asp:TextBox></td>
                 </tr>
                 <tr>
                     <td>Mobile No</td>
                     <td>
-                        <asp:TextBox ID="TxtmobileNo"  class="form-control" runat="server"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtmobileNo1"  class="form-control" runat="server"></asp:TextBox></td>
                 </tr>
 
                 <tr>
                     <td>Class</td>
                     <td>
-                     <asp:DropDownList ID="TxtClass"   class="form-control" runat="server"></asp:DropDownList></td>
+                     <asp:DropDownList ID="TxtClass1"   class="form-control" runat="server"></asp:DropDownList></td>
                 </tr>
 
                 <tr>
                     <td>Dob(mm/dd/yyyy)</td>
                     <td>
-                        <asp:TextBox ID="TxtDob" runat="server"  class="form-control"></asp:TextBox></td>
+                        <asp:TextBox ID="TxtDob1" runat="server"  class="form-control"></asp:TextBox></td>
                 </tr>
                  <tr>
-                <td> <asp:Button ID="BtnUpdate" runat="server" Text="Update" CssClass="btn" OnClick="BtnUpdate_Click"></asp:Button></td>
+                <td> <asp:Button ID="BtnUpdate" runat="server" Text="Update" CssClass="btn btn-primary" OnClick="BtnUpdate_Click"></asp:Button></td>
                 <td>
 
                 </td>
@@ -218,8 +220,9 @@
 
             <h1 id="rslt" runat="server"> </h1>
         </div>
+             </center>
     </form>
-
-    </center>
+        </div>
+   
 </body>
 </html>

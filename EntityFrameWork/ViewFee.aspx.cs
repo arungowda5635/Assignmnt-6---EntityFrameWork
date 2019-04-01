@@ -13,33 +13,39 @@ namespace EntityFrameWork
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            String recrd = "<table><tr><td>ID</td><td>Unique ID </td><td>Fee</td><td>Date</td><td>delete</td></tr>";
-            DataTable tbl = new DataTable();
-            String qry = "select * from tbFee";
-            tbl = obj.Srch(qry);
-            if (tbl.Rows.Count > 0)
+            try
             {
-                for (int x = 0; x < tbl.Rows.Count; x++)
+                String recrd = "<table><tr><td>Unique ID </td><td>Fee</td><td>Date</td><td>delete</td></tr>";
+                DataTable tbl = new DataTable();
+                String qry = "select * from tbFee";
+                tbl = obj.Srch(qry);
+                if (tbl.Rows.Count > 0)
                 {
-                    recrd = recrd + "<tr><td>" + tbl.Rows[x]["UniqID"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["Fee"] + "</td>";
-                    recrd = recrd + "<td>" + tbl.Rows[x]["Sdate"] + "</td>";
-                    recrd = recrd + "<td><a href='ViewFee.aspx?id=" + tbl.Rows[x]["id"] + "' class='btn-primary' style='border:5px ridge green;height:90px;padding:50px;'>Delete</td></tr>";
-                    
-                }
-                rslt.InnerHtml = recrd + "</table>";
-            }
-            else
-            {
-                rslt.InnerHtml = "record is empty";
-            }
+                    for (int x = 0; x < tbl.Rows.Count; x++)
+                    {
+                        recrd = recrd + "<tr><td>" + tbl.Rows[x]["UniqID"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["Fee"] + "</td>";
+                        recrd = recrd + "<td>" + tbl.Rows[x]["Sdate"] + "</td>";
+                        recrd = recrd + "<td><a href='ViewFee.aspx?id=" + tbl.Rows[x]["id"] + "' class='btn-primary' style='border:5px ridge green;height:10px;padding:10px;'>Delete</td></tr>";
 
-            if (Request.QueryString["id"] != null)
-            {
-                qry = "";
-                qry = "delete from tbFee where id=" + Convert.ToInt32(Request.QueryString["id"].ToString()) + "";
-                obj.InsDelUpdt(qry);
-                Response.Redirect("ViewFee.aspx");
+                    }
+                    rslt.InnerHtml = recrd + "</table>";
+                }
+                else
+                {
+                    rslt.InnerHtml = "record is empty";
+                }
+
+                if (Request.QueryString["id"] != null)
+                {
+                    qry = "";
+                    qry = "delete from tbFee where id=" + Convert.ToInt32(Request.QueryString["id"].ToString()) + "";
+                    obj.InsDelUpdt(qry);
+                    Response.Redirect("ViewFee.aspx");
+                }
+            }
+            catch (Exception rs) {
+                rslt.InnerHtml = "check the Code ";
             }
         }
     }

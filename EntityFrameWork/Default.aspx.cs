@@ -20,24 +20,31 @@ namespace EntityFrameWork
         protected void btnLogin_Click(object sender, EventArgs e)
         {
             dbClass obj = new dbClass();
-            if (TxtName.Text.ToString().Equals("") && TxtPassword.Text.ToString().Equals(""))
-            {
-                rslt.InnerHtml = "Fill  user Name or password ";
-            }
-            else
+            try
             {
 
-                String qry = "select * from tbRegister where SuserName='" + TxtName.Text + "' and Spassword='" + TxtPassword.Text + "'";
-                DataTable tbl = new DataTable();
-                tbl = obj.Srch(qry);
-                if (tbl.Rows.Count > 0)
+                if (TxtName.Text.ToString().Equals("") && TxtPassword.Text.ToString().Equals(""))
                 {
-                    Response.Redirect("AdminZone.aspx");
+                    rslt.InnerHtml = "Fill  user Name or password ";
                 }
                 else
                 {
-                    rslt.InnerHtml = "invalid user Name or password";
+
+                    String qry = "select * from tbRegister where SuserName='" + TxtName.Text + "' and Spassword='" + TxtPassword.Text + "'";
+                    DataTable tbl = new DataTable();
+                    tbl = obj.Srch(qry);
+                    if (tbl.Rows.Count > 0)
+                    {
+                        Response.Redirect("AdminZone.aspx");
+                    }
+                    else
+                    {
+                        rslt.InnerHtml = "invalid user Name or password";
+                    }
                 }
+            }
+            catch (Exception  es) {
+                rslt.InnerHtml = "Fill Proper Details for Login";
             }
         }
     }

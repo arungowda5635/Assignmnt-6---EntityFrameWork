@@ -13,17 +13,27 @@ namespace EntityFrameWork
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void btnFee_Click(object sender, EventArgs e)
         {
-            DateTime dt = new DateTime();
+            DateTime dt = DateTime.UtcNow.Date;
+           // rslt.InnerHtml =;
 
-            String qry = "insert into tbFee(UniqID,Fee,Sdate) values("+Convert.ToInt32(txtId.Text)+","+Convert.ToInt32(txtFee.Text.ToString())+",'"+dt.ToLongDateString()+"')";
-            obj.InsDelUpdt(qry);
-            rslt.InnerHtml = "Fee Paid ";
 
+            try
+            {
+                String qry = "insert into tbFee(UniqID,Fee,Sdate) values(" + Convert.ToInt32(txtId.Text) + "," + Convert.ToInt32(txtFee.Text.ToString()) + ",'" + dt.ToString("dd/MM/yyyy") + "')";
+                obj.InsDelUpdt(qry);
+                rslt.InnerHtml = "Fee Paid ";
+                txtId.Text = "";
+                txtFee.Text = "";
+
+            }
+            catch (Exception ex) {
+                rslt.InnerHtml = "There is some error please check it ";
+            }
 
         }
     }

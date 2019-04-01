@@ -107,16 +107,16 @@
                 </li>
                   </li>
                 <li class="nav-item">
-                  <a href="RegisterStudent.aspx" class="nav-link scroll" >Register</a>
+                  <a href="RegisterStudent.aspx?#Record" class="nav-link scroll" >Register</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewStudent.aspx" class="nav-link scroll">View student</a>
+                  <a href="ViewStudent.aspx?#Record" class="nav-link scroll">View student</a>
                 </li>
                 <li class="nav-item">
-                  <a href="PayFee.aspx" class="nav-link scroll">Fee</a>
+                  <a href="PayFee.aspx?#Record" class="nav-link scroll">Fee</a>
                 </li>
                 <li class="nav-item">
-                  <a href="ViewFee.aspx" class="nav-link scroll">View Fee</a>
+                  <a href="ViewFee.aspx?#Record" class="nav-link scroll">View Fee</a>
                 </li>
               </ul>
             </div>
@@ -136,7 +136,7 @@
                   <div class="slider-info text-left">
                     <h4 >Welcome </h4>
                     <h5>College Admision System</h5>
-                    <p>You can  Add  View Student 
+                    <p>Welcome to the Admission Portal 
                     </p>
                     <div class="outs_more-buttn" >
                       <a href="#" data-toggle="modal" data-target="#exampleModalLive" data-blast="bgColor">More</a>
@@ -156,7 +156,7 @@
       </div>
     </div>
     <!-- //banner -->
-
+    <div id="Record">
     <h1 style="color:white;text-align:center;font-size:50px;">Register Student </h1>
     
     
@@ -206,6 +206,7 @@
             <h1 id="rslt" runat="server"> </h1>
         </div>
     </form>
+        </div>
     </center>
 </body>
 </html>

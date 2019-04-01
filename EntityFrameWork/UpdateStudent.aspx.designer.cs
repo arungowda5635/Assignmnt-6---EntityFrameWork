@@ -22,67 +22,67 @@ namespace EntityFrameWork {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// TxtId control.
+        /// TxtId1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtId;
+        protected global::System.Web.UI.WebControls.TextBox TxtId1;
         
         /// <summary>
-        /// txtName control.
+        /// txtName1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtName;
+        protected global::System.Web.UI.WebControls.TextBox txtName1;
         
         /// <summary>
-        /// TxtFatherName control.
+        /// TxtFatherName1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtFatherName;
+        protected global::System.Web.UI.WebControls.TextBox TxtFatherName1;
         
         /// <summary>
-        /// txtAddress control.
+        /// txtAddress1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtAddress;
+        protected global::System.Web.UI.WebControls.TextBox txtAddress1;
         
         /// <summary>
-        /// TxtmobileNo control.
+        /// TxtmobileNo1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtmobileNo;
+        protected global::System.Web.UI.WebControls.TextBox TxtmobileNo1;
         
         /// <summary>
-        /// TxtClass control.
+        /// TxtClass1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList TxtClass;
+        protected global::System.Web.UI.WebControls.DropDownList TxtClass1;
         
         /// <summary>
-        /// TxtDob control.
+        /// TxtDob1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtDob;
+        protected global::System.Web.UI.WebControls.TextBox TxtDob1;
         
         /// <summary>
         /// BtnUpdate control.
