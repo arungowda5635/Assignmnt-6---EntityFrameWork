@@ -139,7 +139,7 @@
                 <div class="container">
                   <div class="slider-info text-left">
                     <h4 >Welcome </h4>
-                    <h5>College Admision System</h5>
+                    <h5>College Admission System</h5>
                     <p>Welcome to Update Student Details Portal
                     </p>
                     <div class="outs_more-buttn" >
